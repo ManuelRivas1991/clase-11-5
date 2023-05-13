@@ -19,6 +19,7 @@
     <button v-on:click="tar.dadoDeBaja = true">
         Dar de baja
     </button>
+    <button v-on:click="eliminar(index)">ELiminar tarea</button>
     </div>
 </div>
 
@@ -69,7 +70,13 @@ export default {
         tarea: this.nuevaTarea,
         estado: false
     })
-   }
+   },
+   eliminar:function(index){
+            if (confirm("Eliminar Tarea?")){
+                this.tareas.splice(index, 1)
+            }
+             
+        }
   }
 }
 </script>
